@@ -1,0 +1,74 @@
+url:http://www.google.com/-Request
+1.First the request is connected to 
+Server
+2.Based on the request type the
+ related
+html/pages/response is generated
+
+
+Server---
+1.Request is received from the client
+2.Forward request to server side program(Servelts,JSP)
+3.Server side program is executed and generates
+response to the client.
+
+Servlet API
+
+javax.servlet.*
+interface:Servlet,ServletRequest,
+           ServletResponse
+class:GenericServlet,ServletException
+
+
+How to create Servlet Program?
+
+2ways
+1.Extends GenericServlet/HttpServlet
+2.Implements an interface-Servlet
+
+
+javax.servlet.http.*;
+classes and interfaces
+
+
+
+
+
+Step1:Create a servlet by extending
+ GenericServlet
+Step2:Handle request and generate response
+  (implement/override service method)
+public void service(ServletRequest req,
+     ServletResponse res)throws ServletException
+{
+
+
+}
+
+step3:Set the contentType-to specify the output
+format on the browser
+res.setContentType("text/html");
+step4:Create Object for PrintWriter by calling
+getWriter() on response object
+PrintWriter out=res.getWriter();
+Step 5:Display message
+out.println("<h1>Hello Servlet</h1>");
+
+
+Set the class Path for servlet-api
+set classpath=%classpath%;.;
+C:\Program Files\Apache Software Foundation\Tomcat 9.0\lib\
+      servlet-api.jar;.;
+
+Copy the .class from SRC and paste into classes folder
+
+For Execution:Need to write one more file called
+web.xml(Deployment File/Descriptor)
+----This file indicates path of your servlet program.
+
+http://localhost:8080/Placements/MyFirst
+
+Syntax:http://localhost:8080/directoryName/urlpattern
+
+
+
